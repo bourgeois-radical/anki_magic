@@ -1,12 +1,21 @@
 import os
 from dotenv import load_dotenv
 
-# Load the environment variables from the .secret file
-load_dotenv('.secret')
+# Load environment variables from the .env file
+load_dotenv()
 
-# Access the HF_TOKEN variable
-hf_token = os.getenv('HF_TOKEN')
-if hf_token:
-    print('HF_TOKEN has been loaded')
-else:
-    print('HF_TOKEN not found')
+def get_hf_token():
+    # Access the HF_ACCESS_KEY variable
+
+    hf_access_key = os.getenv('HF_TOKEN')
+    if hf_access_key:
+        print('Hugging Face access key has been loaded')
+        return hf_access_key
+    else:
+        print('Hugging Face access key not found')
+        exit(1)  # Exit with a status code to indicate an error
+
+# Example usage
+if __name__ == "__main__":
+    hf_access_key = get_hf_token()
+    print(f'Your Hugging Face Access Key is: {hf_access_key}')
