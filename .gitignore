@@ -1,3 +1,5 @@
 .venv/
-init/__pycache__/tokens.cpython-310.pyc
+init/__pycache__
 init/.secret
+init/__pycache__/__init__.cpython-310.pyc
+.env
